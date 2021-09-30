@@ -34,7 +34,7 @@ class MovableButton @JvmOverloads constructor(
                 y = mInitY + event.rawY - mEventY
             }
         }
-        return true
+        return super.onTouchEvent(event)
     }
 
 }
