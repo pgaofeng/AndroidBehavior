@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
+    <com.study.androidbehavior.widget.MovableButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -18,7 +15,7 @@
         android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_behavior=".behavior.AttrBehavior"
-        app:sex="aaaa" />
+        android:src="@mipmap/bg"
+        app:layout_behavior=".behavior.BelowBehavior" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
