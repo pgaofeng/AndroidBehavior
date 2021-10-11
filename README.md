@@ -1,1 +1,3 @@
 # AndroidBehavior
+
+Behavior的demo，用于试验Behavior的方法及使用方式
