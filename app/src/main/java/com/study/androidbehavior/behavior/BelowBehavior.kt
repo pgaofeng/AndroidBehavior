@@ -3,7 +3,6 @@ package com.study.androidbehavior.behavior
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
-import android.widget.Toast
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.study.androidbehavior.widget.MovableButton
 
@@ -35,8 +34,10 @@ class BelowBehavior(
         return true
     }
 
-    override fun onDependentViewRemoved(parent: CoordinatorLayout, child: View, dependency: View) {
-        Toast.makeText(parent.context, "依赖的view被移除", Toast.LENGTH_SHORT).show()
+    override fun onDependentViewRemoved(
+        parent: CoordinatorLayout, child: View,
+        dependency: View
+    ) {
         child.y = 0F
     }
 
