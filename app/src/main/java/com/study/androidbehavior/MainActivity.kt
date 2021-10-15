@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var mParent: CoordinatorLayout
     private lateinit var mButtonMovable: MovableButton
+    private lateinit var mButtonRemove: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,9 +18,9 @@ class MainActivity : AppCompatActivity() {
 
         mParent = findViewById(R.id.parent)
         mButtonMovable = findViewById(R.id.movable_button)
-        mButtonMovable.setOnLongClickListener {
-            mParent.removeView(it)
-            true
+        mButtonRemove = findViewById(R.id.button_remove)
+        mButtonRemove.setOnClickListener {
+            mParent.removeView(mButtonMovable)
         }
     }
 }

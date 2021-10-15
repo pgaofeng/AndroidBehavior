@@ -5,12 +5,14 @@
     android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText">
 
     <com.study.androidbehavior.widget.MovableButton
         android:id="@+id/movable_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="可移动View" />
 
     <ImageView
         android:id="@+id/image"
@@ -18,5 +20,12 @@
         android:layout_height="wrap_content"
         android:src="@mipmap/bg"
         app:layout_behavior=".behavior.BelowBehavior" />
+
+    <Button
+        android:id="@+id/button_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="移除按钮" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
