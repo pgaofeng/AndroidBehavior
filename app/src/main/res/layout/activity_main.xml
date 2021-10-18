@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/bg"
-        app:layout_behavior=".behavior.BelowBehavior" />
+        app:layout_behavior=".behavior.LayoutBehavior" />
 
     <Button
         android:id="@+id/button_remove"

@@ -10,7 +10,7 @@ import com.study.androidbehavior.widget.MovableButton
  * @author gaofeng
  * @date 2021/9/30
  *
- * 一直处在目标View的下方，跟随目标而动
+ * 一直处在目标View的下方，跟随目标而动、并且目标只能是[MovableButton]
  */
 class BelowBehavior(
     context: Context,
