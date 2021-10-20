@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity"
     tools:ignore="HardcodedText">
 
-    <com.study.androidbehavior.widget.MovableButton
-        android:id="@+id/movable_button"
+    <Button
+        android:id="@+id/btn_attr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="可移动View" />
-
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/bg"
-        app:layout_behavior=".behavior.LayoutBehavior" />
+        android:text="测试获取属性值" />
 
     <Button
-        android:id="@+id/button_remove"
+        android:id="@+id/btn_below"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:text="移除按钮" />
+        android:text="测试依赖跟随" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <Button
+        android:id="@+id/btn_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试自定义布局" />
+
+</LinearLayout>

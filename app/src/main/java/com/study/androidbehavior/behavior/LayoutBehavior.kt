@@ -3,6 +3,7 @@ package com.study.androidbehavior.behavior
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
+import android.widget.Button
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.study.androidbehavior.widget.MovableButton
 
@@ -23,10 +24,10 @@ class LayoutBehavior(
         layoutDirection: Int
     ): Boolean {
         // 去查找是否有MovableButton
-        var target: MovableButton? = null
+        var target: Button? = null
         for (i in 0 until parent.childCount) {
-            if (parent.getChildAt(i) is MovableButton) {
-                target = parent.getChildAt(i) as MovableButton
+            if (parent.getChildAt(i) is Button) {
+                target = parent.getChildAt(i) as Button
                 break
             }
         }
@@ -34,9 +35,9 @@ class LayoutBehavior(
         // 将child放置在movableButton的右侧
         child.layout(
             target.right,
-            target.top,
+            target.bottom,
             target.right + child.measuredWidth,
-            target.top + child.measuredHeight
+            target.bottom + child.measuredHeight
         )
         return true
     }
