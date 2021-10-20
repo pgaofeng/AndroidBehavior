@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.study.androidbehavior.view.AttrActivity
 import com.study.androidbehavior.view.BelowActivity
 import com.study.androidbehavior.view.LayoutActivity
+import com.study.androidbehavior.view.TouchActivity
 
 /**
  * @author gaofeng
@@ -35,5 +36,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, LayoutActivity::class.java))
         }
 
+        findViewById<View>(R.id.btn_scroll).setOnClickListener {
+            startActivity(Intent(this, TouchActivity::class.java))
+        }
     }
 }

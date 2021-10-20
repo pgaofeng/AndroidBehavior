@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidBehavior">
+        <activity android:name=".view.TouchActivity" />
         <activity android:name=".view.AttrActivity" />
         <activity android:name=".view.LayoutActivity" />
         <activity android:name=".view.BelowActivity" />

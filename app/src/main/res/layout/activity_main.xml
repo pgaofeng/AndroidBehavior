@@ -25,4 +25,10 @@
         android:layout_height="wrap_content"
         android:text="测试自定义布局" />
 
+    <Button
+        android:id="@+id/btn_scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试嵌套滑动" />
+
 </LinearLayout>
