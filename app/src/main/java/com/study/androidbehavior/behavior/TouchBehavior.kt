@@ -2,6 +2,7 @@ package com.study.androidbehavior.behavior
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 
