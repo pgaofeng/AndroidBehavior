@@ -6,23 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".view.TouchActivity">
 
-    <FrameLayout
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="100dp"
+        android:background="#00FFFF"
+        app:layout_behavior=".behavior.TouchBehavior" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior=".behavior.ToBottomBehavior"
         tools:itemCount="10"
         tools:listitem="@layout/item_recycler" />
-
-    </FrameLayout>
-
-    <Button
-        app:layout_behavior=".behavior.TouchBehavior"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
