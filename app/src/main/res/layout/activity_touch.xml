@@ -9,13 +9,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="#00FFFF"
+        android:background="#0000FF"
         app:layout_behavior=".behavior.TouchBehavior" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#00FFFF"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_behavior=".behavior.ToBottomBehavior"
         tools:itemCount="10"

@@ -2,6 +2,7 @@ package com.study.androidbehavior.behavior
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.recyclerview.widget.RecyclerView
 
@@ -28,6 +29,29 @@ class ToBottomBehavior(
         }
         val firstView = parent.getChildAt(0)
         child.layout(0, firstView.measuredHeight, child.measuredWidth, child.measuredHeight)
+        return true
+    }
+
+    override fun layoutDependsOn(
+        parent: CoordinatorLayout,
+        child: RecyclerView,
+        dependency: View
+    ): Boolean {
+        return dependency === parent.getChildAt(0)
+    }
+
+    override fun onDependentViewChanged(
+        parent: CoordinatorLayout,
+        child: RecyclerView,
+        dependency: View
+    ): Boolean {
+//        child.translationY = dependency.translationY
+        child.layout(
+            0,
+            (dependency.bottom + dependency.translationY).toInt(),
+            child.measuredWidth,
+            child.measuredHeight
+        )
         return true
     }
 

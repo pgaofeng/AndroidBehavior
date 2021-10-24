@@ -25,6 +25,7 @@ class TouchBehavior(
         axes: Int,
         type: Int
     ): Boolean {
+        // 只拦截纵向的滚动
         return axes == ViewCompat.SCROLL_AXIS_VERTICAL
     }
 
@@ -37,12 +38,13 @@ class TouchBehavior(
         consumed: IntArray,
         type: Int
     ) {
+        // 注意，手指向上滑动的时候，dy大于0。向下的时候dy小于0。
         val translationY = child.translationY
         if (-translationY >= child.measuredHeight || dy < 0) {
             // child已经滚动到屏幕外了，或者向下滚动，就不去消耗滚动了
             return
         }
-        // 还差这么多距离将会移出屏幕外
+        // 还差这么desireHeight距离将会移出屏幕外
         val desireHeight = translationY + child.measuredHeight
         if (dy <= desireHeight) {
             // 将dy全部消耗掉
