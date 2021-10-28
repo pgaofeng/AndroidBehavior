@@ -57,4 +57,30 @@ class TouchBehavior(
         }
     }
 
+    override fun onNestedScroll(
+        coordinatorLayout: CoordinatorLayout,
+        child: View,
+        target: View,
+        dxConsumed: Int,
+        dyConsumed: Int,
+        dxUnconsumed: Int,
+        dyUnconsumed: Int,
+        type: Int,
+        consumed: IntArray
+    ) {
+        val translationY = child.translationY
+        if (translationY >= 0 || dyUnconsumed > 0) {
+            // 手指向上滚动或者child已经滚出了屏幕，不去处理
+            return
+        }
+
+        if (dyUnconsumed > translationY) {
+            // 全部消耗
+            child.translationY = translationY - dyUnconsumed
+        } else {
+            // 消耗一部分
+            child.translationY = 0F
+        }
+    }
+
 }

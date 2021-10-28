@@ -29,7 +29,7 @@ class SimpleAdapter : RecyclerView.Adapter<SimpleAdapter.ViewHolder>() {
         }
     }
 
-    override fun getItemCount() = 100
+    override fun getItemCount() = 20
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 }

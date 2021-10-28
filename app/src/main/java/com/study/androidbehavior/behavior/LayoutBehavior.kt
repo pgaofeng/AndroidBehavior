@@ -23,7 +23,7 @@ class LayoutBehavior(
         child: View,
         layoutDirection: Int
     ): Boolean {
-        // 去查找是否有MovableButton
+        // 去查找是否有Button
         var target: Button? = null
         for (i in 0 until parent.childCount) {
             if (parent.getChildAt(i) is Button) {
