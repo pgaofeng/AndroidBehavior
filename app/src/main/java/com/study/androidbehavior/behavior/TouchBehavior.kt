@@ -76,9 +76,11 @@ class TouchBehavior(
 
         if (dyUnconsumed > translationY) {
             // 全部消耗
+            consumed[1] += dyUnconsumed
             child.translationY = translationY - dyUnconsumed
         } else {
             // 消耗一部分
+            consumed[1] += child.translationY.toInt()
             child.translationY = 0F
         }
     }
