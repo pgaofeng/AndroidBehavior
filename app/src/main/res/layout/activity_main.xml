@@ -29,6 +29,14 @@
         android:id="@+id/btn_scroll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="测试嵌套滑动" />
+        android:text="测试Behavior嵌套滑动"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_nested"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试NSParent嵌套滑动"
+        android:textAllCaps="false" />
 
 </LinearLayout>

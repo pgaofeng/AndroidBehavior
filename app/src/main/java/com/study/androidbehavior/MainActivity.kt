@@ -4,10 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.study.androidbehavior.view.AttrActivity
-import com.study.androidbehavior.view.BelowActivity
-import com.study.androidbehavior.view.LayoutActivity
-import com.study.androidbehavior.view.TouchActivity
+import com.study.androidbehavior.view.*
 
 /**
  * @author gaofeng
@@ -38,6 +35,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<View>(R.id.btn_scroll).setOnClickListener {
             startActivity(Intent(this, TouchActivity::class.java))
+        }
+
+        findViewById<View>(R.id.btn_nested).setOnClickListener {
+            startActivity(Intent(this, NestedActivity::class.java))
         }
     }
 }
