@@ -22,7 +22,6 @@ class NestedParent @JvmOverloads constructor(
 ) : ViewGroup(context, attr, defStyle), NestedScrollingParent3 {
 
     private var mTopRange = 0
-    private var mBottomRange = 0
     private val mParentHelper = NestedScrollingParentHelper(this)
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -40,10 +39,6 @@ class NestedParent @JvmOverloads constructor(
                 0 -> {
                     mTopRange = -child.measuredHeight
                     child.layout(l, t + mTopRange, r, t)
-                }
-                2 -> {
-                    mBottomRange = child.measuredHeight
-                    child.layout(l, b, r, b + mBottomRange)
                 }
                 else -> child.layout(l, t, r, b)
             }
@@ -71,28 +66,20 @@ class NestedParent @JvmOverloads constructor(
         type: Int,
         consumed: IntArray
     ) {
-        if (dyUnconsumed < 0) {
+        if (dyUnconsumed < 0 && scrollY > mTopRange) {
             // 手指向下滑动
-            if (scrollY > mTopRange) {
-                // 还差desire就会完全滚走
-                val desire = mTopRange - scrollY
-                println("desire: $desire")
-                if (dyUnconsumed <= desire) {
-                    // 只能消耗一部分
-                    scrollTo(0, mTopRange)
-                    consumed[1] += desire
-                } else {
-                    // 全部消耗完
-                    scrollTo(0, scrollY + dyUnconsumed)
-                    consumed[1] += dyUnconsumed
-                }
+            // 还差desire就会完全滚走
+            val desire = mTopRange - scrollY
+            if (dyUnconsumed <= desire) {
+                // 只能消耗一部分
+                scrollTo(0, mTopRange)
+                consumed[1] += desire
+            } else {
+                // 全部消耗完
+                scrollTo(0, scrollY + dyUnconsumed)
+                consumed[1] += dyUnconsumed
             }
-
-        } else {
-            // 手指向上滑动
         }
-
-
     }
 
     override fun onNestedScroll(
@@ -106,16 +93,18 @@ class NestedParent @JvmOverloads constructor(
     }
 
     override fun onNestedPreScroll(target: View, dx: Int, dy: Int, consumed: IntArray, type: Int) {
+        if (dy > 0 && scrollY < 0) {
+            // 手指向上滑动
+            val desire = -scrollY
+            if (dy <= desire) {
+                // 全部消耗
+                scrollTo(0, scrollY + dy)
+                consumed[1] = dy
+            } else {
+                // 消耗一部分
+                scrollTo(0, scrollY + dy)
+                consumed[1] = desire
+            }
+        }
     }
-
-
-    /**
-     * 拓展属性，将dp转换成px
-     */
-    private val Number.dp
-        get() = TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_DIP,
-            this.toFloat(),
-            resources.displayMetrics
-        ).toInt()
 }
