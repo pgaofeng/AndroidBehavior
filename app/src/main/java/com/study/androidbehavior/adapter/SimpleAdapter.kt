@@ -25,7 +25,7 @@ class SimpleAdapter : RecyclerView.Adapter<SimpleAdapter.ViewHolder>() {
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (holder.itemView is TextView) {
-            holder.itemView.text = "这是第${position + 1}个Item呦"
+            (holder.itemView as TextView).text = "这是第${position + 1}个Item呦"
         }
     }
 

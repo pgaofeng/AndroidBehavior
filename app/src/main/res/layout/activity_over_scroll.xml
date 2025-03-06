@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.study.androidbehavior.widget.MyViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:background="#FF0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</com.study.androidbehavior.widget.MyViewGroup>

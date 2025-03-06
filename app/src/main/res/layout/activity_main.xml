@@ -39,4 +39,10 @@
         android:text="测试NSParent嵌套滑动"
         android:textAllCaps="false" />
 
+    <Button
+        android:id="@+id/btn_overscroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试过度滑动" />
+
 </LinearLayout>

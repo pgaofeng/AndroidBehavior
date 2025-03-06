@@ -40,5 +40,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.btn_nested).setOnClickListener {
             startActivity(Intent(this, NestedActivity::class.java))
         }
+
+        findViewById<View>(R.id.btn_overscroll).setOnClickListener {
+            startActivity(Intent(this, OverScrollActivity::class.java))
+        }
     }
 }
